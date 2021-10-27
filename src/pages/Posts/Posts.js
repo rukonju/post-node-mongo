@@ -5,14 +5,14 @@ import './Posts.css'
 const Posts = () => {
     const [posts, setPosts] = useState([]);
     useEffect(() =>{
-        fetch('http://localhost:5000/posts')
+        fetch('https://shrouded-wave-62233.herokuapp.com/posts')
         .then(res=>res.json())
         .then(data=>setPosts(data))
     },[])
     const deletePost= id =>{
         const prossed = window.confirm('Are you sure?')
         if(prossed){
-            const url = `http://localhost:5000/posts/${id}`
+            const url = `https://shrouded-wave-62233.herokuapp.com/posts/${id}`
             fetch(url ,{
                 method: 'DELETE'
             })
