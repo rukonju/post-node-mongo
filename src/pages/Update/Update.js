@@ -8,7 +8,7 @@ const Update = () => {
     const [isUpdate, setIsUpdate] = useState(false);
     const {id}=useParams();
     useEffect(()=>{
-       const url = `http://localhost:5000/posts/${id}`
+       const url = `https://shrouded-wave-62233.herokuapp.com/posts/${id}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPost(data)) 
@@ -18,7 +18,7 @@ const Update = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data =>{
-        fetch(`http://localhost:5000/posts/${id}`,{
+        fetch(`https://shrouded-wave-62233.herokuapp.com/posts/${id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
